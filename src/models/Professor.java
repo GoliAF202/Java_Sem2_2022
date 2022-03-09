@@ -16,5 +16,15 @@ public class Professor {
 	public ProfDegree getDegree() {
 		return degree;
 	}
+
+	// 3. set funkcijas
+	public void setName(String name) {
+		if (name.matches("[A-Z]{1}[a-z]+")){				// https://regex101.com/
+			this.name = name;
+		}
+		else {
+			this.name = "notknown";
+		}
+	}	
 	
 }
