@@ -53,7 +53,9 @@ public class Student {
 	}
 	
 	// 4. toString funkcijas
+	@Override
 	public String toString() {
-		return id + " " + name + " " + surname;
+		return "Student [id=" + id + ", name=" + name + ", surname=" + surname + "]";
 	}
+	
 }

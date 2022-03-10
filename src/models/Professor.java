@@ -67,8 +67,8 @@ public class Professor {
 	}
 	
 	// 4. toString funkcijas
+	@Override
 	public String toString() {
-		return id + " " + name + " " + surname + " " + degree;
+		return "Professor [name=" + name + ", surname=" + surname + ", degree=" + degree + ", id=" + id + "]";
 	}
-	
 }
