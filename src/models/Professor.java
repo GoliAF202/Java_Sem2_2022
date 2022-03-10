@@ -55,5 +55,9 @@ public class Professor {
 		setDegree(degree);
 	}
 	
+	// 4. toString funkcijas
+	public String toString() {
+		return name + " " + surname + " " + degree;
+	}
 	
 }
