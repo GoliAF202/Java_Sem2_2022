@@ -52,23 +52,24 @@ public class Course {
 		}
 	}
 	
-	/*//3. konstruktori
+	//3. konstruktori
 	public Course() {
 		setId();
-		setTitle("Test");
-		setCreditPoints("10");
+		setTitle("Testa kurss");
+		setCreditPoints((byte)2);
 		setProfessor(new Professor());
 	}
-	public Course(String title, byte creditPoints,Professor professor) {
+	public Course(String title, byte creditPoints, Professor professor) {
 		setId();
 		setTitle(title);
 		setCreditPoints(creditPoints);
 		setProfessor(professor);
 	}
 	
-	//4. toString funkcijas
-	public String to String() {
-		return id + " " + title + " " + creditPoints + " " + professor;
+	// 4. toString funkcija
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", title=" + title + ", creditPoints=" + creditPoints + ", professor=" + professor.toString() + "]";
 	}
-	*/
+	
 }
