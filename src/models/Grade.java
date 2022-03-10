@@ -7,7 +7,7 @@ public class Grade {
 	private Student student;
 	private Course course;
 
-	private static int idCounter = 20000;
+	private static int idCounter = 100000;
 
 	//2.1 get funkcijas
 	public int getId() {
@@ -28,7 +28,7 @@ public class Grade {
 		this.id = idCounter++;
 	}
 	public void setValue(int value) {
-		if (value >= 0 && value <= 10) {
+		if (value > 0 && value <= 10) {
 			this.value = value;
 		}
 		else {
@@ -69,7 +69,7 @@ public class Grade {
 	// 4. toString funkcija
 	@Override
 	public String toString() {
-		return "Grade [id=" + id + ", value=" + value + ", student=" + student + ", course=" + course + "]";
+		return "Grade [id=" + id + ", value=" + value + ", student=" + student.getSurname() + ", course=" + course.getTitle() + "]";
 	}
 	
 }
