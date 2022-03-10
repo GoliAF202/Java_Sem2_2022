@@ -5,6 +5,9 @@ public class Professor {
 	private String name;
 	private String surname;
 	private ProfDegree degree;
+	private int id;
+	
+	private static int idCounter = 0;
 	
 	// 2.1. get funkcijas	
 	public String getName() {
@@ -16,7 +19,10 @@ public class Professor {
 	public ProfDegree getDegree() {
 		return degree;
 	}
-
+	public int getId() {
+		return id;
+	}
+	
 	// 2.2. set funkcijas
 	public void setName(String name) {
 		if (name != null && name.matches("[A-ZĀĒŪĪĻĶĢŠŽČŅ]{1}[a-zēūīāšģķļņčž]+\s?([A-ZĀĒŪĪĻĶĢŠŽČŅ]{1}[a-zēūīāšģķļņčž]+)?")){				// https://regex101.com/
@@ -42,22 +48,28 @@ public class Professor {
 			this.degree = ProfDegree.master;
 		}
 	}		
+	public void setId() {
+		this.id = idCounter;
+		idCounter++;
+	}
 	
 	// 3. konstruktori
 	public Professor () {
 		setName("Test");
 		setSurname("Professor");
 		setDegree(ProfDegree.doctor);
+		setId();
 	}
 	public Professor (String name, String surname, ProfDegree degree){
 		setName(name);
 		setSurname(surname);
 		setDegree(degree);
+		setId();
 	}
 	
 	// 4. toString funkcijas
 	public String toString() {
-		return name + " " + surname + " " + degree;
+		return id + " " + name + " " + surname + " " + degree;
 	}
 	
 }
