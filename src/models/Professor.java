@@ -49,8 +49,7 @@ public class Professor {
 		}
 	}		
 	public void setId() {
-		this.id = idCounter;
-		idCounter++;
+		this.id = idCounter++;
 	}
 	
 	// 3. konstruktori
