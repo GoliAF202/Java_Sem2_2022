@@ -4,6 +4,7 @@ import models.ProfDegree;
 import models.Professor;
 import models.Student;
 
+import java.awt.GraphicsDevice;
 import java.util.ArrayList;
 
 import models.Course;
@@ -100,7 +101,45 @@ public class VeAForumService {
 			}
 
 		}
-
+		
+		/*System.out.println("Jāņa vid. atz." + calculateAVGGrade(10000));
+		System.out.println("Līga vid. atz." + calculateAVGGrade(10001));*/
+		for (Person temp : allPersons) {
+			if(temp instanceof Student) {
+				Student stud = (Student)temp;
+				System.out.println(stud.getName() + " vid. atz." + calculateAVGGrade(stud.getId()));
+			}
+		}
+		
+		for (Course temp : allCourses) {
+			System.out.println(temp.getTitle() + " vid. atz." + calculateAVGGradeInCourse(temp.getId()));
+		}
+		
+	}
+	// https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html
+	private static float calculateAVGGrade(int studentId) {
+		float sum = 0;
+		int gradeCounter = 0;
+		for (Grade gr : allGrades) {
+			if(gr.getStudent().getId() == studentId) {
+				sum += gr.getValue();
+				gradeCounter++;
+			}
+		}
+		return sum/gradeCounter;
+	}
+	
+	//noskaidrot vidējo atzīmi konkrēta kursā
+	public static float calculateAVGGradeInCourse(int courseId) {
+		float sum = 0;
+		int gradeCounter = 0;
+		for (Grade gr : allGrades) {
+			if(gr.getCourse().getId() == courseId) {
+				sum += gr.getValue();
+				gradeCounter++;
+			}
+		}
+		return sum/gradeCounter;
 	}
 
 }
