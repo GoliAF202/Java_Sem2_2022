@@ -8,11 +8,13 @@ import java.util.ArrayList;
 
 import models.Course;
 import models.Grade;
+import models.Person;
 
 public class VeAForumService {
 
-	private static ArrayList<Professor> allProfessors = new ArrayList<>();
-	private static ArrayList<Student> allStudents = new ArrayList<>();
+	//private static ArrayList<Professor> allProfessors = new ArrayList<>();
+	//private static ArrayList<Student> allStudents = new ArrayList<>();
+	private static ArrayList<Person> allPersons = new ArrayList<>();
 	private static ArrayList<Course> allCourses = new ArrayList<>();
 	private static ArrayList<Grade> allGrades = new ArrayList<>();
 	
@@ -21,12 +23,12 @@ public class VeAForumService {
 		Professor prof1 = new Professor("Karian", "Šķirmante", ProfDegree.master);
 		Professor prof2 = new Professor("Estere", "Vītola", ProfDegree.master);
 		Professor prof3 = new Professor("Vairis", "Caune", ProfDegree.doctor);
-		allProfessors.add(prof1);
-		allProfessors.add(prof2);
-		allProfessors.add(prof3);
-		for(Professor temp : allProfessors) {
+		allPersons.add(prof1);
+		allPersons.add(prof2);
+		allPersons.add(prof3);
+		/*for(Professor temp : allProfessors) {
 			System.out.println(temp);
-		}
+		}*/
 		/*
 		System.out.println(prof1);
 		System.out.println(prof2);
@@ -48,12 +50,12 @@ public class VeAForumService {
 		Student stud1 = new Student("Jānis", "Bērziņš");
 		Student stud2 = new Student("Līga", "Jauka");
 		Student stud3 = new Student("Baiba", "Nejauka");
-		allStudents.add(stud1);
-		allStudents.add(stud2);
-		allStudents.add(stud3);
-		for(Student temp : allStudents) {
+		allPersons.add(stud1);
+		allPersons.add(stud2);
+		allPersons.add(stud3);
+		/*for(Student temp : allStudents) {
 			System.out.println(temp);
-		}
+		}*/
 		/*System.out.println(stud1);
 		System.out.println(stud2);
 		System.out.println(stud3);*/
@@ -82,6 +84,22 @@ public class VeAForumService {
 		System.out.println(g5);
 		System.out.println(g6);
 		System.out.println(g7);*/
+		
+		allPersons.add(new Person("Peteris", "Kalns"));
+		
+		for(Person temp : allPersons) {
+			System.out.println(temp.toString());
+		}
+		System.out.println("-------------------------");
+		
+		for(Person temp : allPersons) {
+			// tikai professori
+			if(temp instanceof Professor) {
+				Professor prof = (Professor)temp;
+				System.out.println(prof.getDegree());
+			}
+
+		}
 
 	}
 
