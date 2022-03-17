@@ -28,7 +28,7 @@ public class Student extends Person{
 	// 4. toString funkcijas
 	@Override
 	public String toString() {
-		return id + " " + super.toString();
+		return id + " " + super.toString();			// var super.getName() un super.getSurname()
 	}
 	
 }
