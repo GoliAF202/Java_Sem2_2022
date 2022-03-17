@@ -72,4 +72,17 @@ public class Course {
 		return "Course [id=" + id + ", title=" + title + ", creditPoints=" + creditPoints + ", professor=" + professor.toString() + "]";
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		Course otherCourse = (Course)obj;
+		if(title.equals(otherCourse.getTitle())) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
+	
 }
