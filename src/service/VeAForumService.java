@@ -169,5 +169,20 @@ public class VeAForumService {
 		}
 		return new Course();
 	}
+	//U - update
+	private static boolean updateCourseById(int courseId, String updateTitle, byte updateCP, Professor updateProfessor) {
+		if(courseId >= 1000 && courseId < 10000){
+			for (Course course : allCourses) {
+				if(course.getId() == courseId) {
+					course.setTitle(updateTitle);
+					course.setCreditPoints(updateCP);
+					course.setProfessor(updateProfessor);
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 
 }
